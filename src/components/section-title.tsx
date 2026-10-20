@@ -1,0 +1,3 @@
+export function SectionTitle({eyebrow,title,description,light=false}:{eyebrow:string;title:string;description?:string;light?:boolean}) {
+ return <div className="max-w-2xl fade-in"><p className={`mb-3 text-xs font-black uppercase tracking-[.22em] ${light?"text-lime":"text-leaf"}`}>{eyebrow}</p><h2 className={`text-3xl font-black leading-tight tracking-tight sm:text-4xl ${light?"text-white":"text-forest"}`}>{title}</h2>{description&&<p className={`mt-4 leading-7 ${light?"text-white/65":"text-forest/65"}`}>{description}</p>}</div>
+}

@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";
+export const revalidate = 900;
+export async function GET(){const fallback=Number(process.env.USD_NGN_FALLBACK_RATE||1500);try{const res=await fetch("https://open.er-api.com/v6/latest/USD",{next:{revalidate:900}});if(!res.ok)throw new Error("Rate provider unavailable");const data=await res.json();const rate=Number(data?.rates?.NGN);if(!Number.isFinite(rate)||rate<=0)throw new Error("Invalid exchange rate");return NextResponse.json({rate,live:true,updatedAt:data.time_last_update_utc});}catch{return NextResponse.json({rate:fallback,live:false});}}

@@ -1,0 +1,2 @@
+import { Recycle } from "lucide-react";
+export default function Loading(){return <div className="grid min-h-[60vh] place-items-center bg-sand"><div className="flex flex-col items-center"><div className="relative grid h-20 w-20 place-items-center rounded-3xl bg-forest text-lime"><Recycle size={35}/><span className="absolute -right-2 -top-2 h-5 w-5 animate-ping rounded-full bg-lime/70"/></div><div className="loading-ring mt-7"/><p className="mt-5 animate-pulse text-sm font-bold tracking-wide text-forest/70">Making room for a greener future…</p></div></div>}
